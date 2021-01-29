@@ -1,0 +1,25 @@
+server:
+  port: 1010
+spring:
+  #应用配置
+  application:
+    name: user-server #服务名配置
+  cloud:
+    #sentinel 限流降级服务配置
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:1111 #限流服务地址
+    #nacos配置
+    nacos:
+      #nacos服务发现地址配置
+      discovery:
+        server-addr: 127.0.0.1:8848    #注册中心地址
+      #nacos配置管理配置
+      config:
+        server-addr: 127.0.0.1:8848 #配置中心
+        file-extension: yaml #配置文件格式
+        prefix: application-user #配置前缀 ，默认使用sring.application.name
+        group: DEFAULT_GROUP #默认分组
+  #激活的配置dev，这里配置交给了nacos
+  profiles:
+    active: dev  #环境

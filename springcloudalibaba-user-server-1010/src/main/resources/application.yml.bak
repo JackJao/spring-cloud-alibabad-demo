@@ -1,0 +1,10 @@
+server:
+  port: 1010
+spring:
+  application:
+    name: user-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848    #注册中心地址
+#使用nacos后不需要该配置文件了，springboot配置文件的加载优先级别是bootstrap.yml>application.yml
